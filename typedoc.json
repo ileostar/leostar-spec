@@ -1,0 +1,18 @@
+{
+  // 输入选项 - 入口文件/文件夹
+  "entryPoints": [
+    "packages"
+  ],
+  // 输入选项 - 排除文件/文件夹
+  "exclude": [
+    "node_moudles",
+  ],
+  // 输出选项 - 将软件包package.json中的版本version添加到项目名称中
+  "includeVersion": true,
+  // 输出选项 - 设置将在模板标题中使用的项目的名称。默认为package.json中的name
+  "name": "测试title",
+  // 输出选项 - 不在页面末尾打印TypeDoc链接
+  "hideGenerator": true,
+  // 输出选项 - 禁用描述代码位置
+  "disableSources": true
+}

@@ -1,12 +1,47 @@
 {
-  "name": "root",
+  "name": "leostar-spec",
   "private": true,
+  "description": "LeoStar の 前端编码规范",
   "packageManager": "pnpm@8.12.0",
+  "homepage": "https://docs-spec.netlify.app/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ileostar/leostar-spec.git"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "typedoc": "typedoc --tsconfig typedoc.json"
+  },
+  "keywords": [
+    "leostar",
+    "code-spec"
+  ],
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
+  "author": {
+    "name": "LeoStar",
+    "url": "https://github.com/ileostar",
+    "email": "hi@leostar.top"
+  },
+  "license": "MIT",
   "devDependencies": {
-    "lerna": "^8.0.1"
+    "esno": "^4.0.0",
+    "lerna": "^8.0.1",
+    "markdownlint": "^0.32.1",
+    "rimraf": "^5.0.5",
+    "simple-git-hooks": "^2.9.0",
+    "tslib": "^2.6.2",
+    "typedoc": "^0.25.4",
+    "typescript": "^5.3.3",
+    "vitepress": "1.0.0-rc.32"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
