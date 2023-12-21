@@ -6,7 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "leostar",
+    "style",
+    "lint"
+  ],
+  "author": "leostar <hi@leostar.top> (https://github.com/ileostar)",
+  "license": "ISC",
+  "peerDependencies": {
+    "markdownlint": "^0.28.1"
+  }
 }

@@ -1,12 +1,19 @@
 {
   "name": "@ileostar/commitlint-config",
   "version": "1.0.0",
-  "description": "",
+  "description": "commitlint config",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "leostar",
+    "style",
+    "lint"
+  ],
+  "author": "leostar <hi@leostar.top> (https://github.com/ileostar)",
+  "license": "ISC",
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^4.5.0"
+  }
 }

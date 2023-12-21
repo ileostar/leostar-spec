@@ -9,17 +9,22 @@
     "url": "git@github.com:ileostar/leostar-spec.git"
   },
   "scripts": {
+    "lint": "pnpm -r run stub && eslint . && markdownlint README.md",
+    "test": "pnpm -r run test",
+    "build": "pnpm -r run build",
+    "prepare": "pnpm -r run stub",
+    "publish": "lerna publish",
+    "release": "bumpp -r && pnpm -r publish --no-git-checks --access public",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
-    "typedoc": "typedoc --tsconfig typedoc.json"
+    "typedoc": "typedoc --tsconfig typedoc.json",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "keywords": [
     "leostar",
+    "monorepo",
     "code-spec"
-  ],
-  "workspaces": [
-    "packages/*"
   ],
   "author": {
     "name": "LeoStar",
@@ -27,7 +32,14 @@
     "email": "hi@leostar.top"
   },
   "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
+    "@commitlint/cli": "^16.0.0",
+    "@ileostar/commitlint-config": "workspace:^",
+    "@ileostar/markdownlint-config": "workspace:^",
+    "bumpp": "^9.2.1",
     "esno": "^4.0.0",
     "lerna": "^8.0.1",
     "markdownlint": "^0.32.1",
@@ -38,10 +50,11 @@
     "typescript": "^5.3.3",
     "vitepress": "1.0.0-rc.32"
   },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
   "publishConfig": {
+    "git-checks": false,
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^7.0.2"
   }
 }
